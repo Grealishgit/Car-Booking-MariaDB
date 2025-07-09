@@ -14,8 +14,8 @@ const Home = () => {
                 style={{ backgroundImage: `url(${interior})` }}>
                 <div className="flex md:flex-row flex-col  items-center justify-center">
                     <div className="w-full mt-20 ">
-                        <p className="text-white text-[80px] textlg font-bold">
-                            Discover Endless <br /> Possibilities with <span className='text-blue-500'>ShikaRide</span> 
+                        <p className="text-white md:text-[80px] text-3xl font-bold">
+                            Discover Endless <br /> Possibilities with <span className='md:text-blue-500 '>ShikaRide</span> 
                         </p>
 
                         <p className="text-white md:text-[20px] text-md font-semibold mt-2">
@@ -35,7 +35,7 @@ const Home = () => {
                 </div>
 
 
-                <div className="flex md:flex-row flex-col relative top-30  border backdrop-blur-3xl bg-black/40
+                <div className="flex md:flex-row flex-col relative top-40  border backdrop-blur-3xl bg-black/40
              border-gray-300 md:rounded-2xl rounded-lg p-4 justify-center mt-2 mb-4">
 
                     <div className="flex flex-col items-start space-y-2 p-2  rounded-lg  md:w-1/2 w-full">
