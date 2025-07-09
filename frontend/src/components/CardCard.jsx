@@ -211,15 +211,57 @@ const CardCard = () => {
                             we have the perfect car for you. Enjoy advanced technology, fuel efficiency,
                             and a smooth driving experience with our top-rated vehicles.
                             <br />
-                            <span className='text-blue-500 font-semibold'>Book now</span>
+                            <span className='text-blue-500 font-semibold'>Book now </span>
                             and experience the future of driving with our trend vehicles.
                         </p>
+
+                        <p className='text-white text-center text-lg font-semibold mt-4'>Why choose our vehicles?</p>
+                        <div className='flex flex-wrap gap-4 mt-2'>
+                            <li className='px-4 py-2 list-none rounded-md font-semibold bg-blue-700 text-white'>Convinient</li>
+                            <li className='px-4 py-2 rounded-md list-none font-semibold bg-blue-500 text-white'>Comfortable</li>
+                            <li className='px-4 py-2 rounded-md list-none font-semibold bg-green-500 text-white'>Safe & Reliable</li>
+                        </div>
+
+
                     </div>
                     <div className='md:w-1/2 w-full flex justify-center items-center'>
                         <img src={car1} alt="Car" className='w-full h-85 object-cover rounded-lg shadow-lg mt-4' />
 
                     </div>
                 </div>
+
+                <div className='flex  mb-5 items-center justify-center mt-10 gap-5'>
+                    <div className='md:w-1/2 w-full flex justify-center items-center'>
+                        <img src={car5} alt="Car" className='w-full h-85 object-cover rounded-lg shadow-lg mt-4' />
+
+                    </div>
+                    <div className='md:w-1/2 w-full flex flex-col justify-center items-start'>
+                        <p className='text-white text-3xl font-semibold mt-4'>
+                            Experience every fine detail with our trend vehicles!
+                        </p>
+                        <p className='text-gray-200 text-md mt-2'>
+                            Bold first imoression and a sleek design that turns heads on the road.
+                            Our trend vehicles are equipped with the latest technology and safety features,
+                            ensuring a comfortable and secure driving experience. From spacious interiors to
+                            advanced infotainment systems, every detail is designed to enhance your journey.
+                            <br />
+
+                        </p>
+                        <p className='text-white text-center text-lg font-semibold mt-4'>Are you travelling alone or taking a family with you?</p>
+                        <p className='text-gray-200 text-md mt-2'>
+                            <span className='text-blue-500 font-semibold'>Choose your ride</span> based on your needs and preferences.
+                            Whether you need a compact car for solo trips, a spacious SUV for family adventures,
+                            or a stylish sedan for friends' outings, we have the perfect vehicle for you.
+                        </p>
+                        <div className='flex flex-wrap gap-4 mt-2'>
+                            <li className='px-4 py-2 list-none rounded-md font-semibold bg-green-700 text-white'>Solo</li>
+                            <li className='px-4 py-2 rounded-md list-none font-semibold bg-blue-500 text-white'>Family</li>
+                            <li className='px-4 py-2 rounded-md list-none font-semibold bg-blue-500 text-white'>Friends</li>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
