@@ -6,6 +6,9 @@ import car4 from '../assets/carcard4.png'
 import car5 from '../assets/carcard5.png'
 import car6 from '../assets/carcard6.png'
 import car7 from '../assets/carcard7.png'
+import interior from '../assets/interior.png'
+import interior1 from '../assets/interior1.png'
+import interior2 from '../assets/interior2.png'
 import { IoArrowBackCircleOutline, IoHeart } from "react-icons/io5"
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
@@ -261,7 +264,29 @@ const CardCard = () => {
                     </div>
 
                 </div>
+                <div className='flex  mb-5 items-center justify-center mt-10 gap-5'>
+                    <div className='w-1/3 flex flex-col justify-center items-center'>
+                        <p className='text-5xl font-bold  mb-5 text-white'>
+                            <span className='text-blue-500'>Experience</span> every fine detail with our trend vehicles!</p>
+                        <p className='text-white text-md'>Bold First Impression Turn heads wherever you go with a sleek silhouette, polished finishes, and a commanding road presence.
+                            Every curve and contour is designed to make a statement, ensuring you arrive in style.
+                        </p>
+                    </div>
+                    <div className='w-3/4 flex justify-center items-center'>
+                        <img src={interior2} alt="Interior" className='w-full h-85 object-cover rounded-lg shadow-lg mt-4' />
+                    </div>
 
+                </div>
+
+                <div className='flex flex-row  mb-5 items-center justify-center  gap-5'>
+                    <div className='md:w-3/4 w-full flex flex-col justify-center items-center'>
+                        <img src={interior} alt="Interior" className='w-full h-100 object-cover rounded-lg shadow-lg mt-4' />
+                    </div>
+
+                    <div className='md:w-1/2 w-full flex flex-col justify-center items-center'>
+                        <img src={interior1} alt="Interior" className='w-full h-100 object-cover rounded-lg shadow-lg mt-4' />
+                    </div>
+                </div>
             </div>
 
         </div>

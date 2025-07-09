@@ -5,6 +5,7 @@ import Service from './pages/Service'
 import Locations from './pages/Locations'
 import Contact from './pages/Contact'
 import { Toaster } from 'react-hot-toast'
+import Footer from './components/Footer'
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/locations" element={<Locations />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
 
     </>
   )
