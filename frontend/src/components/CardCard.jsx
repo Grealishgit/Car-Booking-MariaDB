@@ -13,6 +13,7 @@ import './CardCard.css'
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
+import toast from 'react-hot-toast'
 
 const carInfo = [
     {
@@ -119,10 +120,12 @@ const CardCard = () => {
             const newFavorites = new Set(prev);
             if (newFavorites.has(carId)) {
                 newFavorites.delete(carId);
-                console.log(`Car with ID ${carId} removed from favorites`);
+                toast.success(`Car  ${carId} removed from favorites`);
+                // console.log(`Car with ID ${carId} removed from favorites`);
             } else {
                 newFavorites.add(carId);
-                console.log(`Car with ID ${carId} added to favorites`);
+                toast.success(`Car  ${carId} added to favorites`);
+                // console.log(`Car with ID ${carId} added to favorites`);
             }
             return newFavorites;
         });
@@ -182,8 +185,12 @@ const CardCard = () => {
                                         <p className="text-white font-bold mt-2">Ksh {car.price}</p>
                                     </div>
                                     <div className='flex justify-between items-center mt-2'>
-                                        <p className="text-gray-200 text-sm">{car.description}</p>
-                                        <button className=" bg-blue-600 animate-ping font-semibold px-6 py-1 cursor-pointer rounded-lg 
+                                        <p className="text-gray-200 text-sm">
+                                            {car.description.length ? car.description.length > 30 ? `${car.description.slice(0, 20)}...`
+                                                : car.description
+                                                : "No description available"
+                                            }</p>
+                                        <button className=" bg-blue-600 animate-bounce font-semibold px-6 py-1 cursor-pointer rounded-lg 
                                          text-white transition duration-300 hover:bg-blue-700">
                                             Book
                                         </button>
@@ -191,6 +198,26 @@ const CardCard = () => {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </div>
+
+                <div className='flex  mb-5 items-center justify-center mt-10 gap-5'>
+                    <div className='md:w-1/2 w-full flex flex-col justify-center items-start'>
+                        <p className='text-white text-3xl font-semibold mt-4'>
+                            Explore the latest vehicles and find your perfect ride!</p>
+                        <p className='text-gray-200 text-md mt-2'>
+                            Discover a wide range of modern vehicles designed for comfort, safety, and performance.
+                            Whether you're looking for a reliable sedan, a spacious SUV, or a stylish coupe,
+                            we have the perfect car for you. Enjoy advanced technology, fuel efficiency,
+                            and a smooth driving experience with our top-rated vehicles.
+                            <br />
+                            <span className='text-blue-500 font-semibold'>Book now</span>
+                            and experience the future of driving with our trend vehicles.
+                        </p>
+                    </div>
+                    <div className='md:w-1/2 w-full flex justify-center items-center'>
+                        <img src={car1} alt="Car" className='w-full h-85 object-cover rounded-lg shadow-lg mt-4' />
+
                     </div>
                 </div>
             </div>
