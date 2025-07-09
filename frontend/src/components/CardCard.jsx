@@ -241,7 +241,7 @@ const CardCard = () => {
 
                 <div className='flex  mb-5 items-center justify-center mt-10 gap-5'>
                     <div className='md:w-1/2 w-full flex justify-center items-center'>
-                        <img src={car5} alt="Car" className='w-full h-85 object-cover rounded-lg shadow-lg mt-4' />
+                        <img src={car5} alt="Car" className='w-full h-85 object-cont rounded-lg shadow-lg mt-4' />
 
                     </div>
                     <div className='md:w-1/2 w-full flex flex-col justify-center items-start'>

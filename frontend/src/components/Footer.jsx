@@ -57,9 +57,9 @@ const Footer = () => {
 
                 </div>
             </div>
-            <div className='w-full bg-gray-900 border-t border-gray-300 mt-4'>
-                <p className='text-md text-white text-center mt-2'>Made with ❤️ by the ShikaRide Team
-                    <span>© 2023 MariaDB Auth. All rights reserved.</span>
+            <div className='w-full bg-gray-900 border-t border-gray-700 mt-4'>
+                <p className='text-md text-white text-center mt-2 mb-4'>
+                    Made with ❤️ by the ShikaRide Team <span>© {new Date().getFullYear()} ShikaRide. All rights reserved.</span>
                 </p>
             </div>
         </footer>
