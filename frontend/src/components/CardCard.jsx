@@ -17,6 +17,7 @@ import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import toast from 'react-hot-toast'
+import { MdOutlineMail } from "react-icons/md";
 
 const carInfo = [
     {
@@ -285,6 +286,40 @@ const CardCard = () => {
 
                     <div className='md:w-1/2 w-full flex flex-col justify-center items-center'>
                         <img src={interior1} alt="Interior" className='w-full h-100 object-cover rounded-lg shadow-lg mt-4' />
+                    </div>
+                </div>
+
+                <div className='flex flex-row  mb-5 items-center justify-center  gap-5'>
+                    <div className='md:w-1/2 w-full flex flex-col p-4 justify-center items-start'>
+                        <p className='text-4xl font-bold text-white'>Frequently Asked Questions</p>
+                        <p className='text-gray-200 text-md mt-2'>
+                            <span className='text-blue-300 text-lg font-semibold'>Have questions about our vehicles? </span>
+                            Here are some common queries answered to help you make an informed decision.
+                        </p>
+                        <div className='flex flex-col relative w-full  justify-center  mt-4'>
+                            <MdOutlineMail className='absolute left-2 top-7 text-white w-6 h-6' />
+
+                            <input type="text"
+                                placeholder='Enter Your Email...'
+                                className='w-full mt-4 p-3 rounded-lg  text-white
+                             placeholder-gray-100 pl-8 border border-gray-300 focus:outline-none focus:border-blue-300'
+                            />
+                            <button className='absolute right-2 top-5 bg-blue-500 text-white px-6 py-2 rounded-lg
+                             hover:bg-blue-600 transition duration-300'>
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='flex flex-col justify-center items-start'>
+                            <p className='text-white text-lg font-semibold mt-4'>What is the rental process?</p>
+                            <p className='text-gray-200 text-md mt-2'>To rent a vehicle, simply select your desired car, choose your rental dates, and complete the booking form. You will receive a confirmation email with all the details.</p>
+                            <p className='text-white text-lg font-semibold mt-4'>What are the payment options?</p>
+                            <p className='text-gray-200 text-md mt-2'>We accept various payment methods including credit/debit cards and mobile money transfers. All payments are secure and processed through our trusted payment gateway.</p>
+                            <p className='text-white text-lg font-semibold mt-4'>Is insurance included in the rental price?</p>
+                            <p className='text-gray-200 text-md mt-2'>Yes, all our rentals include basic insurance coverage. Additional insurance options are available for purchase at the time of booking.</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
