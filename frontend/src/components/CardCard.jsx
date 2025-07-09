@@ -10,7 +10,7 @@ import interior from '../assets/interior.png'
 import interior1 from '../assets/interior1.png'
 import interior2 from '../assets/interior2.png'
 import { IoArrowBackCircleOutline, IoHeart } from "react-icons/io5"
-import { IoIosHeartEmpty } from "react-icons/io";
+import { IoIosArrowDropdown, IoIosHeartEmpty } from "react-icons/io";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import './CardCard.css'
 import { FaStar } from "react-icons/fa";
@@ -100,6 +100,7 @@ function renderStars(rating) {
 const CardCard = () => {
     const scrollContainerRef = useRef(null);
     const [favorites, setFavorites] = useState(new Set());
+    const [openFAQ, setOpenFAQ] = useState(null);
 
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
@@ -133,6 +134,10 @@ const CardCard = () => {
             }
             return newFavorites;
         });
+    }
+
+    const toggleFAQ = (faqIndex) => {
+        setOpenFAQ(openFAQ === faqIndex ? null : faqIndex);
     }
 
     return (
@@ -311,15 +316,50 @@ const CardCard = () => {
                         </div>
                     </div>
                     <div>
-                        <div className='flex flex-col justify-center items-start'>
-                            <p className='text-white text-lg font-semibold mt-4'>What is the rental process?</p>
-                            <p className='text-gray-200 text-md mt-2'>To rent a vehicle, simply select your desired car, choose your rental dates, and complete the booking form. You will receive a confirmation email with all the details.</p>
-                            <p className='text-white text-lg font-semibold mt-4'>What are the payment options?</p>
-                            <p className='text-gray-200 text-md mt-2'>We accept various payment methods including credit/debit cards and mobile money transfers. All payments are secure and processed through our trusted payment gateway.</p>
-                            <p className='text-white text-lg font-semibold mt-4'>Is insurance included in the rental price?</p>
-                            <p className='text-gray-200 text-md mt-2'>Yes, all our rentals include basic insurance coverage. Additional insurance options are available for purchase at the time of booking.</p>
-                        </div>
+                        <div className='flex flex-col justify-center w-full items-start'>
+                            <button
+                                onClick={() => toggleFAQ(1)}
+                                className='bg-gray-700 cursor-pointer flex w-full items-center justify-between rounded-lg p-2 mt-4 hover:bg-gray-600 transition-colors duration-300'>
+                                <p className='text-white text-lg font-semibold'>What is the rental process?</p>
+                                <IoIosArrowDropdown
+                                    className={`text-white w-6 h-6 transition-transform duration-300 ${openFAQ === 1 ? 'rotate-180' : ''}`}
+                                />
+                            </button>
+                            {openFAQ === 1 && (
+                                <div className='p-3  mt-2 w-full'>
+                                    <p className='text-gray-200 text-md'>To rent a vehicle, simply select your desired car, choose your rental dates, and complete the booking form. You will receive a confirmation email with all the details.</p>
+                                </div>
+                            )}
 
+                            <button
+                                onClick={() => toggleFAQ(2)}
+                                className='bg-gray-700 cursor-pointer flex w-full items-center justify-between rounded-lg p-2 mt-4 hover:bg-gray-600 transition-colors duration-300'>
+                                <p className='text-white text-lg font-semibold'>What are the payment options?</p>
+                                <IoIosArrowDropdown
+                                    className={`text-white w-6 h-6 transition-transform duration-300 ${openFAQ === 2 ? 'rotate-180' : ''}`}
+                                />
+                            </button>
+                            {openFAQ === 2 && (
+                                <div className='p-3  mt-2 w-full'>
+                                    <p className='text-gray-200 text-md'>We accept various payment methods including credit/debit cards and mobile money transfers. All payments are secure and processed through our trusted payment gateway.</p>
+                                </div>
+                            )}
+
+                            <button
+                                onClick={() => toggleFAQ(3)}
+                                className='bg-gray-700 cursor-pointer flex w-full items-center justify-between rounded-lg p-2 mt-4
+                                 hover:bg-gray-600 transition-colors duration-300'>
+                                <p className='text-white text-lg font-semibold'>Is insurance included in the rental price?</p>
+                                <IoIosArrowDropdown
+                                    className={`text-white w-6 h-6 transition-transform duration-300 ${openFAQ === 3 ? 'rotate-180' : ''}`}
+                                />
+                            </button>
+                            {openFAQ === 3 && (
+                                <div className='rounded-lg mt-2 w-full'>
+                                    <p className='text-gray-200 text-md'>Yes, all our rentals include basic insurance coverage. Additional insurance options are available for purchase at the time of booking.</p>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
