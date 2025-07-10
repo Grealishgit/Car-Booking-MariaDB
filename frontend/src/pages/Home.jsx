@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import car from '../assets/car1.png'
 import { FaCar } from "react-icons/fa";
 import CardCard from '../components/CardCard';
@@ -7,6 +7,23 @@ import logo from '../assets/logoc.png';
 
 const Home = () => {
     const [banner, setBanner] = useState(true);
+    const [cookiePolicy, setCookiePolicy] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setCookiePolicy(true);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleAcceptCookies = () => {
+        setCookiePolicy(false);
+    };
+
+    const handleDeclineCookies = () => {
+        setCookiePolicy(false);
+    };
 
     return (
         <>
@@ -97,6 +114,40 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
+
+                {cookiePolicy && (
+                    <>
+                        {/* Blurred background overlay */}
+                        <div className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"></div>
+
+                        {/* Cookie policy modal */}
+                        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                            <div className="flex flex-col backdrop-blur-3xl bg-gradient-to-r from-blue-500 via-blue-800 to-sky-400 text-gray-200 text-center p-6 rounded-lg border border-gray-500/30 text-sm max-w-md w-full mx-4">
+                                <img className="w-14 h-14 mx-auto" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/cookies/cookieImage1.svg" alt="cookieImage1" />
+                                <h2 className="text-gray-100 text-xl font-medium pb-3 mt-2">We care about your privacy</h2>
+                                <p className="w-11/12 text-white mx-auto">This website uses cookies for functionality, analytics, and marketing. By accepting, you agree to our <a href="#" className="font-medium underline">Cookie Policy</a>.</p>
+                                <div className="flex items-center justify-center mt-6 gap-4 w-full">
+                                    <button
+                                        type="button"
+                                        onClick={handleDeclineCookies}
+                                        className="font-medium px-8 border cursor-pointer border-gray-500/30 bg-red-500
+                                         py-2 rounded  active:scale-95 transition"
+                                    >
+                                        Decline
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={handleAcceptCookies}
+                                        className="bg-white px-8 py-2 cursor-pointer rounded text-black font-medium
+                                         active:scale-95 transition "
+                                    >
+                                        Accept
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )}
 
             </div>
             <CardCard />
