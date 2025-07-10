@@ -21,7 +21,7 @@ const Navbar = () => {
             <div className='w-full fixed z-50 h-16 backdrop-blur-3xl shadow shadow-black bg-black/50 
              text-white flex items-center justify-between px-4'>
                 <div className='flex items-center space-x-2 cursor-pointer'>
-                    <img src={logo} alt="Logo" className='w-15 h-12 rounded-full cursor-pointer' onClick={() => handleNavigation('/')} />
+                    <img src={logo} alt="Logo" className='w-17 h-10 rounded-full cursor-pointer' onClick={() => handleNavigation('/')} />
                     <p className='text-2xl font-semibold'>Shika<span className='text-[#0E7BF8]'>Ride</span> </p>
                 </div>
                 <div className='md:flex rounded-lg p-1.5 border border-gray-300 hidden space-x-4'>
