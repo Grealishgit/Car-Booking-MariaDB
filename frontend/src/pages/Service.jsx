@@ -54,6 +54,7 @@ const pagination = (currentPage, totalPages) => {
 
 const Service = () => {
     const [favorites, setFavorites] = useState(new Set());
+    const [tilts, setTilts] = useState({});
 
     const toggleFavorite = (carId) => {
         setFavorites(prev => {
@@ -67,6 +68,26 @@ const Service = () => {
             }
             return newFavorites;
         });
+    };
+
+    // Adjust the threshold value to control the tilt effect
+    const threshold = 12;
+
+    const handleMove = (e, carId) => {
+        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+        const x = (e.clientX - left) / width - 0.5;
+        const y = (e.clientY - top) / height - 0.5;
+        setTilts(prev => ({
+            ...prev,
+            [carId]: { x: y * -threshold, y: x * threshold }
+        }));
+    };
+
+    const handleMouseLeave = (carId) => {
+        setTilts(prev => ({
+            ...prev,
+            [carId]: { x: 0, y: 0 }
+        }));
     };
 
     return (
@@ -103,8 +124,16 @@ const Service = () => {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mb-8 md:gap-4  p-4'>
-                {carData.map((car) => (
-                    <div key={car.id} className="max-w-md border border-gray-600 mx-auto my-4 bg-black/70 backdrop-blur-3xl rounded-lg shadow-lg overflow-hidden">
+                {carData.map((car) => {
+                    const currentTilt = tilts[car.id] || { x: 0, y: 0 };
+                    return (
+                        <div key={car.id} className="max-w-md border cursor-pointer  border-gray-600 mx-auto my-4
+                         bg-black/70 backdrop-blur-3xl rounded-lg shadow-lg overflow-hidden"
+                            onMouseMove={(e) => handleMove(e, car.id)}
+                            onMouseLeave={() => handleMouseLeave(car.id)}
+                            style={{ transform: `perspective(1000px) rotateX(${currentTilt.x}deg) rotateY(${currentTilt.y}deg)` }}
+                        >
+
                         <div className="flex items-center justify-between p-4 text-white">
                             <div className="flex flex-col items-start">
                                 <h2 className="text-xl font-bold text-gray-200">{car.name}</h2>
@@ -155,10 +184,10 @@ const Service = () => {
                                     ))}
                                 </ul>
 
-                            </div> */}
+                            </div> */}                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
             <div className='flex max-w-md mx-auto justify-between items-center gap-4 mb-8'>
                 <button className='flex cursor-pointer items-center text-white'>
