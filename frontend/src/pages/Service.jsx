@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import interior from '../assets/bg.png'
 import { carData } from '../../lib/data'
 import { IoIosHeartEmpty } from 'react-icons/io'
 import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 import { FaAngleDown } from 'react-icons/fa';
+import { IoHeart } from 'react-icons/io5';
+import toast from 'react-hot-toast';
 
 
 const fields = [
@@ -33,7 +35,21 @@ function renderStars(rating) {
 }
 
 const Service = () => {
+    const [favorites, setFavorites] = useState(new Set());
 
+    const toggleFavorite = (carId) => {
+        setFavorites(prev => {
+            const newFavorites = new Set(prev);
+            if (newFavorites.has(carId)) {
+                newFavorites.delete(carId);
+                toast.success('Removed from favorites');
+            } else {
+                newFavorites.add(carId);
+                toast.success('Added to favorites');
+            }
+            return newFavorites;
+        });
+    };
 
     return (
         <div className="flex flex-col md:p-20 p-2 items-center bg-center bg-cover min-h-screen text-center"
@@ -81,8 +97,11 @@ const Service = () => {
                                     ))}
                                 </ul>
                             </div>
-
-                            <IoIosHeartEmpty className='w-6 h-5 text-blue-500' />
+                            {favorites.has(car.id) ? (
+                                <IoHeart onClick={() => toggleFavorite(car.id)} className='w-7 h-6 cursor-pointer text-red-500 hover:text-red-600' />
+                            ) : (
+                                <IoIosHeartEmpty onClick={() => toggleFavorite(car.id)} className='w-7 cursor-pointer h-5 text-white hover:text-red-500' />
+                            )}
                         </div>
 
                         <img src={car.image} alt={car.name} className="w-full h-64 object-contain" />
