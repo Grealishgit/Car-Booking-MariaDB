@@ -4,6 +4,17 @@ import { carData } from '../../lib/data'
 import { IoIosHeartEmpty } from 'react-icons/io'
 import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
+import { FaAngleDown } from 'react-icons/fa';
+
+
+const fields = [
+    { placeholder: 'Sort By', options: ['Price', 'Rating', 'Newest'] },
+    { placeholder: 'Vehicle Type', options: ['SUV', 'Sedan', 'Truck'] },
+    { placeholder: 'Gear Shift', options: ['Automatic', 'Manual'] },
+    { placeholder: 'Passengers', options: ['2', '4', '6', '8+'] },
+    { placeholder: "Driver's Age", options: ['18+', '21+', '25+'] },
+];
+
 function renderStars(rating) {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -22,6 +33,8 @@ function renderStars(rating) {
 }
 
 const Service = () => {
+
+
     return (
         <div className="flex flex-col md:p-20 p-2 items-center bg-center bg-cover min-h-screen text-center"
             style={{ backgroundImage: `url(${interior})` }}>
@@ -34,7 +47,27 @@ const Service = () => {
                         Explore our wide range of vehicles and find the perfect ride for your journey!
                     </p>
                 </div>
+
             </div>
+
+            <div className="flex flex-col md:flex-row flex-wrap gap-4 items-center justify-center mt-4">
+                {fields.map((field, idx) => (
+                    <div key={idx} className="relative w-60">
+                        <select
+                            className="appearance-none pl-4 w-full rounded-full text-white border border-white p-2 pr-8 bg-transparent"
+                        >
+                            <option disabled selected>{field.placeholder}</option>
+                            {field.options.map((option, i) => (
+                                <option key={i} value={option} className="text-black">
+                                    {option}
+                                </option>
+                            ))}
+                        </select>
+                        <FaAngleDown className="absolute top-1/2 right-3 transform -translate-y-1/2 pointer-events-none text-white" />
+                    </div>
+                ))}
+            </div>
+
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mb-8 md:gap-4  p-4'>
                 {carData.map((car) => (
                     <div key={car.id} className="max-w-md border border-gray-600 mx-auto my-4 bg-black/70 backdrop-blur-3xl rounded-lg shadow-lg overflow-hidden">
