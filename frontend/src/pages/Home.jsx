@@ -3,6 +3,7 @@ import car from '../assets/car1.png'
 import { FaCar } from "react-icons/fa";
 import CardCard from '../components/CardCard';
 import interior from '../assets/bg.png'
+import logo from '../assets/logoc.png'; 
 
 const Home = () => {
 
@@ -31,9 +32,7 @@ const Home = () => {
                         </div> */}
 
                     </div>
-
                 </div>
-
 
                 <div className="flex md:flex-row flex-col relative top-40  border backdrop-blur-3xl bg-black/40
              border-gray-300 md:rounded-2xl rounded-lg p-4 justify-center mt-2 mb-4">

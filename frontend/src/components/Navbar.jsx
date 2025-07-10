@@ -3,6 +3,7 @@ import { GoQuestion } from "react-icons/go";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { FiUser } from "react-icons/fi";
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/logoc.png'; // Assuming you have a logo image
 
 const Navbar = () => {
     const [isActive, setIsActive] = useState('Home');
@@ -19,7 +20,8 @@ const Navbar = () => {
         <nav>
             <div className='w-full fixed z-50 h-16 backdrop-blur-3xl shadow shadow-black bg-black/50 
              text-white flex items-center justify-between px-4'>
-                <div>
+                <div className='flex items-center space-x-2 cursor-pointer'>
+                    <img src={logo} alt="Logo" className='w-15 h-12 rounded-full cursor-pointer' onClick={() => handleNavigation('/')} />
                     <p className='text-2xl font-semibold'>Shika<span className='text-[#0E7BF8]'>Ride</span> </p>
                 </div>
                 <div className='md:flex rounded-lg p-1.5 border border-gray-300 hidden space-x-4'>
