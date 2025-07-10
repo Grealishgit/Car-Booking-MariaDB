@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import interior from '../assets/bg.png'
 import { carData } from '../../lib/data'
 import { IoIosHeartEmpty } from 'react-icons/io'
-import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { FaArrowLeft, FaChevronLeft, FaChevronRight, FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 import { FaAngleDown } from 'react-icons/fa';
 import { IoHeart } from 'react-icons/io5';
@@ -32,6 +32,24 @@ function renderStars(rating) {
         }
     }
     return stars;
+}
+
+const pagination = (currentPage, totalPages) => {
+    const pages = [];
+    for (let i = 1; i <= totalPages; i++) {
+        pages.push(
+            <button key={i} className={`px-3 py-1 rounded-full ${currentPage === i ? 'bg-blue-500 text-white' :
+                'bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white'}`}
+                onClick={() => console.log(`Go to page ${i}`)} >
+                {i}
+            </button>
+        );
+    }
+    return (
+        <div className="flex justify-center space-x-2">
+            {pages}
+        </div>
+    );
 }
 
 const Service = () => {
@@ -98,9 +116,11 @@ const Service = () => {
                                 </ul>
                             </div>
                             {favorites.has(car.id) ? (
-                                <IoHeart onClick={() => toggleFavorite(car.id)} className='w-7 h-6 cursor-pointer text-red-500 hover:text-red-600' />
+                                <IoHeart onClick={() => toggleFavorite(car.id)}
+                                    className='w-7 h-6 cursor-pointer text-red-500 hover:text-red-600' />
                             ) : (
-                                <IoIosHeartEmpty onClick={() => toggleFavorite(car.id)} className='w-7 cursor-pointer h-5 text-white hover:text-red-500' />
+                                    <IoIosHeartEmpty onClick={() => toggleFavorite(car.id)}
+                                        className='w-7 cursor-pointer h-5 text-white hover:text-red-500' />
                             )}
                         </div>
 
@@ -140,6 +160,20 @@ const Service = () => {
                     </div>
                 ))}
             </div>
+            <div className='flex max-w-md mx-auto justify-between items-center gap-4 mb-8'>
+                <button className='flex cursor-pointer items-center text-white'>
+                    <FaChevronLeft className='w-4 h-4' />
+                    Prev
+                </button>
+                {pagination(1, Math.ceil(carData.length / 4))}
+                <button
+                    onClick={() => console.log('Next Page')}
+                    className='text-blue-500 cursor-pointer flex items-center'>
+                    Next
+                    <FaChevronRight className='w-4 h-4' />
+                </button>
+            </div>
+
         </div>
     )
 }
