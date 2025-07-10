@@ -54,14 +54,25 @@ const Navbar = () => {
                         Locations
                     </button>
                     <button
+                        className={`px-3 py-2 font-semibold cursor-pointer  hover:text-[#0E7BF8] 
+                             ${isActive === 'About' ? 'border-b border-[#0E7BF8] text-[#0E7BF8]' : ''}`}
+                        onClick={() => {
+                            handleClick('About');
+                            handleNavigation('/about');
+                        }}
+                    >
+                        About Us
+                    </button>
+                    <button
                         className={`px-3 py-2 font-semibold cursor-pointer  hover:text-[#0E7BF8]  ${isActive === 'Contact' ? 'border-b border-[#0E7BF8] text-[#0E7BF8]' : ''}`}
                         onClick={() => {
                             handleClick('Contact');
                             handleNavigation('/contact');
                         }}
                     >
-                        Contacts
+                        Contact Us
                     </button>
+
                 </div>
                 <div className='flex items-center space-x-4'>
                     <GoQuestion className='w-6 h-6 cursor-pointer' />
