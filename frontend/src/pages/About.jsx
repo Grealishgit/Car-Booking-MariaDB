@@ -7,10 +7,12 @@ import car4 from '../assets/carcard4.png'
 const About = () => {
     return (
         <div
-            className="flex flex-col md:flex-row items-center max-md:text-center justify-between pt-20 px-6 sm:px-10 md:px-24 max-w-7xl mx-auto w-full">
-            <div className="flex flex-col items-center md:items-start">
+            className="flex flex-col  items-center max-md:text-center justify-between pt-20 px-6  w-full">
+            <div className="flex md:flex-row flex-col items-center md:items-start">
+                <div className=" w-full max-w-7xl ">
                 <button
-                    className="mt-16 mb-6 flex items-center space-x-2 border border-indigo-600 text-indigo-600 text-xs rounded-full px-4 pr-1.5 py-1.5 hover:bg-indigo-50 transition"
+                        className="mt-16  mb-6 flex items-center space-x-2 border border-indigo-600
+                         text-indigo-600 text-xs rounded-full md:px-2 px-5 pr-1.5 py-1.5 hover:bg-indigo-50 transition"
                     type="button">
                     <span>
                         Shika <span className="hidden sm:inline">Ride </span>
@@ -60,20 +62,47 @@ const About = () => {
                         </svg>
                     </a>
                 </div>
+
             </div>
-            <div aria-label="Photos of leaders" className="mt-12 grid grid-cols-2 gap-6 pb-6">
-                <img alt="" className="w-36 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                <div aria-label="Photos of leaders" className="grid grid-cols-2 gap-6 mt-16 pb-6">
+                    <img alt="" className="w-50 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car1}
                     width="120" />
-                <img alt="" className="w-36 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car2}
                     width="120" />
-                <img alt="" className="w-36 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car3}
                     width="120" />
-                <img alt="" className="w-36 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car4}
                     width="120" />
+            </div>
+            </div>
+            <div className="flex flex-col md:flex-row items-center justify-around text-sm border
+             border-gray-300 rounded-md mb-5 max-w-5xl w-full bg-white">
+
+                <div className="flex flex-col text-center md:text-left items-center md:items-start pt-14 md:p-10">
+                    <h2 className="md:text-4xl text-2xl font-semibold text-gray-800">Download Shika<span className='text-blue-500'>Ride</span> App</h2>
+                    <p className="text-gray-700 mt-2 w-3/4">Mobile Shika<span className='text-blue-500'>Ride</span>  app for iOS & Android to manage your online money.</p>
+
+                    <div className="flex items-center gap-4 mt-6">
+                        <button aria-label="googlePlayBtn" class="active:scale-95 transition-all" type="button">
+                            <img className="md:w-44 w-28"
+                                src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/appDownload/googlePlayBtn.svg"
+                                alt="googlePlayBtn" />
+                        </button>
+                        <button aria-label="appleStoreBtn" class="active:scale-95 transition-all" type="button">
+                            <img className="md:w-44 w-28"
+                                src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/appDownload/appleStoreBtn.svg"
+                                alt="appleStoreBtn" />
+                        </button>
+                    </div>
+                </div>
+
+                <img className="max-w-[375px] pt-10 md:p-0"
+                    src={car1}
+                    alt="excitedWomenImage" />
             </div>
         </div>
     )
