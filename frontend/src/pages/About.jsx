@@ -11,7 +11,7 @@ const About = () => {
             <div className="flex md:flex-row flex-col items-center md:items-start">
                 <div className=" w-full max-w-7xl ">
                 <button
-                        className="mt-16  mb-6 flex items-center space-x-2 border border-indigo-600
+                        className="mt-16  mb-6 cursor-pointer flex items-center space-x-2 border border-indigo-600
                          text-indigo-600 text-xs rounded-full md:px-2 px-5 pr-1.5 py-1.5 hover:bg-indigo-50 transition"
                     type="button">
                     <span>
@@ -65,16 +65,16 @@ const About = () => {
 
             </div>
                 <div aria-label="Photos of leaders" className="grid grid-cols-2 gap-6 mt-16 pb-6">
-                    <img alt="" className="w-50 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car1}
                     width="120" />
-                    <img alt="" className="w-50 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car2}
                     width="120" />
-                    <img alt="" className="w-50 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car3}
                     width="120" />
-                    <img alt="" className="w-50 h-44 rounded-lg hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car4}
                     width="120" />
             </div>
