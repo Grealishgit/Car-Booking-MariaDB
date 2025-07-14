@@ -3,16 +3,19 @@ import car1 from '../assets/carcard1.png'
 import car2 from '../assets/carcard2.png'
 import car3 from '../assets/carcard3.png'
 import car4 from '../assets/carcard4.png'
+import interior from '../assets/bg.png'
 
 const About = () => {
     return (
         <div
-            className="flex flex-col  items-center max-md:text-center justify-between pt-20 px-6  w-full">
-            <div className="flex md:flex-row flex-col items-center md:items-start">
+            className="flex flex-col  items-center max-md:text-center bg-center bg-cover  justify-between pt-20 p-4 w-full"
+            style={{ backgroundImage: `url(${interior})` }}
+        >
+            <div className="flex md:flex-row flex-col  p-4 rounded-md mb-8 items-center md:items-start">
                 <div className=" w-full max-w-7xl ">
                 <button
                         className="mt-16  mb-6 cursor-pointer flex items-center space-x-2 border border-indigo-600
-                         text-indigo-600 text-xs rounded-full md:px-2 px-5 pr-1.5 py-1.5 hover:bg-indigo-50 transition"
+                         text-white text-xs rounded-full md:px-2 px-5 pr-1.5 py-1.5  transition"
                     type="button">
                     <span>
                         Shika <span className="hidden sm:inline">Ride </span>
@@ -31,7 +34,7 @@ const About = () => {
 
                     </span>
                 </h1>
-                <p className="mt-4 text-gray-600 max-w-md text-sm sm:text-base leading-relaxed">
+                    <p className="mt-4 text-gray-200 max-w-md text-sm sm:text-base leading-relaxed">
                     We are a leading car marketplace, dedicated to connecting you with the perfect vehicle for your needs.
                     Whether you're looking for a compact car for city driving or a spacious SUV for family adventures,
                     we have a wide range of options to suit every taste and budget. Our platform makes it easy to browse,
@@ -64,27 +67,63 @@ const About = () => {
                 </div>
 
             </div>
-                <div aria-label="Photos of leaders" className="grid grid-cols-2 gap-6 mt-16 pb-6">
+                <div aria-label="Photos of leaders" className="grid grid-cols-3 p-4 border border-gray-300
+                rounded-md bg-gradient-to-bl from-black/50 to-gray-500 gap-6 mt-16 pb-2">
                     <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car1}
                     width="120" />
-                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer  hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car2}
                     width="120" />
                     <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car3}
                     width="120" />
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer  hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                        src={car4}
+                        width="120" />
                     <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
-                    src={car4}
-                    width="120" />
+                        src={car4}
+                        width="120" />
+
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer  hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                        src={car4}
+                        width="120" />
+                </div>
             </div>
+            <div className="flex flex-col items-center text-white">
+                <h2 className="text-3xl font-medium mb-2">
+                    Our Happy<span className="text-indigo-500 font-bold"> Clients
+                    </span>
+                </h2>
+                <div className="flex items-center mb-8 -space-x-3">
+                    <div className="relative group cursor-pointer flex flex-col items-center">
+                        <p className="opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 transition duration-300 mb-3 px-2 py-1 text-sm font-medium">Michael</p>
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="image"
+                            className="w-20 h-20 rounded-full border-4 border-white hover:-translate-y-1 transition hover:scale-110" />
+                    </div>
+                    <div className="relative group cursor-pointer flex flex-col items-center">
+                        <p className="opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 transition duration-300 mb-3 px-2 py-1 text-sm font-medium">James</p>
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="image"
+                            className="w-20 h-20 rounded-full border-4 border-white hover:-translate-y-1 transition hover:scale-110" />
+                    </div>
+                    <div className="relative group cursor-pointer flex flex-col items-center">
+                        <p className="opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 transition duration-300 mb-3 px-2 py-1 text-sm font-medium">Emily</p>
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg"
+                            alt="image" className="w-20 h-20 rounded-full border-4 border-white hover:-translate-y-1 transition hover:scale-110" />
+                    </div>
+                    <div className="relative group cursor-pointer flex flex-col items-center">
+                        <p className="opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 transition duration-300 mb-3 px-2 py-1 text-sm font-medium">John</p>
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="image"
+                            className="w-20 h-20 rounded-full border-4 border-white hover:-translate-y-1 transition hover:scale-110" />
+                    </div>
+                </div>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-around text-sm border
-             border-gray-300 rounded-md mb-5 max-w-5xl w-full bg-white">
+             border-gray-300 rounded-md mb-5 max-w-5xl w-full ">
 
                 <div className="flex flex-col text-center md:text-left items-center md:items-start pt-14 md:p-10">
-                    <h2 className="md:text-4xl text-2xl font-semibold text-gray-800">Download Shika<span className='text-blue-500'>Ride</span> App</h2>
-                    <p className="text-gray-700 mt-2 w-3/4">Mobile Shika<span className='text-blue-500'>Ride</span>  app for iOS & Android to manage your online money.</p>
+                    <h2 className="md:text-4xl text-2xl font-semibold text-gray-200">Download Shika<span className='text-blue-500'>Ride</span> App</h2>
+                    <p className="text-gray-200 mt-2 w-3/4">Mobile Shika<span className='text-blue-500'>Ride</span>  app for iOS & Android to manage your online money.</p>
 
                     <div className="flex items-center gap-4 mt-6">
                         <button aria-label="googlePlayBtn" class="active:scale-95 transition-all" type="button">
@@ -100,7 +139,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <img className="max-w-[375px] pt-10 md:p-0"
+                <img className="max-w-[375px] rounded-md pt-10 md:p-0"
                     src={car1}
                     alt="excitedWomenImage" />
             </div>
