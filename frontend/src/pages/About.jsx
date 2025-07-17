@@ -9,8 +9,8 @@ import { FaCar, FaUsers, FaShieldAlt, FaGlobe, FaAward, FaPhoneAlt, FaCheckCircl
 const About = () => {
     return (
         <div
-            className="flex flex-col  items-center max-md:text-center  justify-between pt-20 p-4 w-full"
-            style={{ backgroundImage: `url(${interior})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            className="flex flex-col  items-center max-md:text-center bg-black/50  justify-between pt-20 p-4 w-full"
+            style={{ backgroundImage: `url(${interior})`, backgroundSize: 'cover', backgroundPosition: 'center', brightness: '0.2' }}>
 
             <div className="flex md:flex-row flex-col  p-4 rounded-md mb-8 items-center md:items-start">
                 <div className=" w-full max-w-7xl ">

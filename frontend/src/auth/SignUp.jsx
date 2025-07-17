@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import bg from '../assets/bg.png'
 import { useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash, FaGoogle, FaFacebook, FaApple, FaPhone, FaEnvelope } from 'react-icons/fa'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const SignUp = () => {
-    const navigate = useNavigate()
-
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
         phone: '',
@@ -44,6 +45,12 @@ const SignUp = () => {
         <div className="flex items-center justify-center bg-cover bg-center min-h-screen bg-black/40"
             style={{ backgroundImage: `url(${bg})` }}
         >
+            {loading && (
+                <div className='flex items-center absolute w-full z-40 backdrop-blur-sm inset-0 justify-center h-screen'>
+                    <LoadingSpinner />
+                </div>
+
+            )}
             <div className="bg-black/60 backdrop-blur-3xl mt-20 p-8 rounded-md border border-blue-500 shadow-2xl w-full max-w-md">
                 <h2 className="text-2xl text-white font-bold mb-6 text-center">
                     Sign Up
