@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import bg from '../assets/bg.png'
 import { FaEnvelope, FaPhone, FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Login = () => {
     const [isInput, setIsInput] = useState('email');
     const [showPassword, setShowPassword] = useState(false);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
@@ -32,6 +34,12 @@ const Login = () => {
         <div className="flex items-center justify-center bg-center bg-cover min-h-screen "
             style={{ backgroundImage: `url(${bg})` }}
         >
+            {loading && (
+                <div className='flex items-center absolute w-full z-40 backdrop-blur-sm inset-0 justify-center h-screen'>
+                    <LoadingSpinner />
+                </div>
+
+            )}
             <div className="bg-black/60 backdrop-blur-3xl mt-20  p-8 rounded-md border border-blue-500 shadow-2xl w-full max-w-md">
                 <h2 className="text-3xl font-bold mb-6 text-center text-gray-200">Welcome <span className='text-blue-500'>Back</span></h2>
                 <p className="text-gray-200 mb-6 text-center">Choose your preferred login method</p>
