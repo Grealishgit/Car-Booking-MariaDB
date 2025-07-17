@@ -3,12 +3,16 @@ import bg from '../assets/bg.png'
 import { FaEnvelope, FaPhone, FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
+import { authAPI } from '../services/api';
+import { useAuth } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [isInput, setIsInput] = useState('email');
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const { login } = useAuth();
     const [formData, setFormData] = useState({
         email: '',
         phone: '',
@@ -23,12 +27,46 @@ const Login = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Login attempt:', {
-            loginType: isInput,
-            ...formData
-        });
+        setLoading(true);
+
+        try {
+            // Prepare the request payload based on login type
+            const payload = {
+                password: formData.password
+            };
+
+            if (isInput === 'email') {
+                payload.email = formData.email;
+            } else {
+                payload.phoneNumber = formData.phone;
+            }
+
+            // Make API call to login endpoint
+            const response = await authAPI.login(payload);
+
+            // Handle successful login
+            if (response.data.token) {
+                // Use AuthContext login method
+                login(response.data.user, response.data.token);
+
+                toast.success('Login successful!');
+
+                // Navigate to dashboard or home page
+                navigate('/');
+            }
+        } catch (error) {
+            // Handle login errors
+            if (error.response && error.response.data) {
+                toast.error(error.response.data.message || 'Login failed');
+            } else {
+                toast.error('Network error. Please try again.');
+            }
+            console.error('Login error:', error);
+        } finally {
+            setLoading(false);
+        }
     };
     return (
         <div className="flex items-center justify-center bg-center bg-cover min-h-screen "

@@ -3,11 +3,16 @@ import bg from '../assets/bg.png'
 import { useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash, FaGoogle, FaFacebook, FaApple, FaPhone, FaEnvelope } from 'react-icons/fa'
 import LoadingSpinner from '../components/LoadingSpinner'
+import { authAPI } from '../services/api'
+import { useAuth } from '../context/AuthContext'
+import toast from 'react-hot-toast'
 
 const SignUp = () => {
     const navigate = useNavigate();
+    const { login } = useAuth();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
+        userName: '',
         email: '',
         phone: '',
         password: '',
@@ -26,10 +31,62 @@ const SignUp = () => {
         }))
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        // Handle form submission here
-        console.log('Form submitted:', formData)
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        // Form validation
+        if (!formData.userName || !formData.email || !formData.phone || !formData.password || !formData.confirmPassword) {
+            toast.error('Please fill in all fields');
+            setLoading(false);
+            return;
+        }
+
+        if (formData.password !== formData.confirmPassword) {
+            toast.error('Passwords do not match');
+            setLoading(false);
+            return;
+        }
+
+        if (formData.password.length < 6) {
+            toast.error('Password must be at least 6 characters long');
+            setLoading(false);
+            return;
+        }
+
+        try {
+            // Prepare the request payload
+            const payload = {
+                userName: formData.userName,
+                email: formData.email,
+                phoneNumber: formData.phone,
+                password: formData.password
+            };
+
+            // Make API call to signup endpoint
+            const response = await authAPI.signup(payload);
+
+            // Handle successful signup
+            if (response.data.token) {
+                // Use AuthContext login method
+                login(response.data.user, response.data.token);
+
+                toast.success('Account created successfully!');
+
+                // Navigate to dashboard or home page
+                navigate('/');
+            }
+        } catch (error) {
+            // Handle signup errors
+            if (error.response && error.response.data) {
+                toast.error(error.response.data.message || 'Signup failed');
+            } else {
+                toast.error('Network error. Please try again.');
+            }
+            console.error('Signup error:', error);
+        } finally {
+            setLoading(false);
+        }
     }
 
     const toggleMode = () => {
@@ -60,6 +117,22 @@ const SignUp = () => {
                 </p>
 
                 <form onSubmit={handleSubmit}>
+                    {/* Username Field */}
+                    <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-200 mb-2">
+                            Username
+                        </label>
+                        <input
+                            type="text"
+                            name="userName"
+                            value={formData.userName}
+                            onChange={handleInputChange}
+                            placeholder="Enter your username"
+                            className="w-full px-4 py-3 bg-gray-800/50 backdrop-blur-sm border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                            required
+                        />
+                    </div>
+
                     {/* Email/Phone Toggle */}
                     <div className="mb-4">
                         <div className="flex bg-gray-800/50 rounded-lg border border-gray-300 p-1 mb-3">

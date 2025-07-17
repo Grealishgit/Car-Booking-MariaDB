@@ -1,7 +1,7 @@
 // backend/index.js
 import express from 'express';
 import cors from 'cors';
-import authRoute from 'routes/authRoutes.js';
+import authRoute from './routes/authRoutes.js'; 
 
 const app = express();
 const PORT = 4000;
