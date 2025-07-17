@@ -78,7 +78,8 @@ const Navbar = () => {
                     <GoQuestion className='w-6 h-6 cursor-pointer' />
                     <IoIosHeartEmpty className='w-6 h-6 cursor-pointer' />
                     <FiUser className='w-6 h-6 md:hidden block cursor-pointer' />
-                    <button className='px-5 py-2 md:flex hidden cursor-pointer gap-2 items-center
+                    <button onClick={() => handleNavigation('/login')}
+                        className='px-5 py-2 md:flex hidden cursor-pointer gap-2 items-center
                      bg-[#0E7BF8] text-white rounded hover:bg-blue-600'>
                         <FiUser />
                         Sign In

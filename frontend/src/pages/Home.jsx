@@ -4,8 +4,10 @@ import { FaCar } from "react-icons/fa";
 import CardCard from '../components/CardCard';
 import interior from '../assets/bg.png'
 import logo from '../assets/logoc.png'; 
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
     const [banner, setBanner] = useState(true);
     const [cookiePolicy, setCookiePolicy] = useState(false);
 

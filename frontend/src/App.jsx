@@ -8,6 +8,8 @@ import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
+import Login from './auth/Login'
+import SignUp from './auth/SignUp'
 
 
 
@@ -22,6 +24,9 @@ function App() {
         <Route path="/locations" element={<Locations />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
