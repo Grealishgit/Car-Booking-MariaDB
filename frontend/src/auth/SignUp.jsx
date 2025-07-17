@@ -55,7 +55,7 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit}>
                     {/* Email/Phone Toggle */}
                     <div className="mb-4">
-                        <div className="flex bg-gray-800/50 rounded-lg p-1 mb-3">
+                        <div className="flex bg-gray-800/50 rounded-lg border border-gray-300 p-1 mb-3">
                             <button
                                 type="button"
                                 onClick={toggleMode}

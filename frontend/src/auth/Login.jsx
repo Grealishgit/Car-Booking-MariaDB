@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import bg from '../assets/bg.png'
 import { FaEnvelope, FaPhone, FaEye, FaEyeSlash } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [isInput, setIsInput] = useState('email');
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
         phone: '',
@@ -148,7 +150,7 @@ const Login = () => {
                     {/* Sign Up Link */}
                     <p className="mt-6 text-sm text-gray-200 text-center">
                         Don't have an account?
-                        <a href="/signup" className="text-blue-600 hover:underline font-medium ml-1">
+                        <a onClick={() => navigate('/signup')} className="text-blue-600 hover:underline cursor-pointer font-medium ml-1">
                             Sign Up
                         </a>
                     </p>
