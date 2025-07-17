@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import interior from '../assets/bg.png'
+import interior from '../assets/bg10.png'
 import { carData } from '../../lib/data'
 import { IoIosHeartEmpty } from 'react-icons/io'
 import { FaArrowLeft, FaChevronLeft, FaChevronRight, FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';

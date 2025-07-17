@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import interior from '../assets/bg4.png';
-import bg from '../assets/bg.png'
+import bg from '../assets/bg9.png'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp, FaHeadset, FaQuestionCircle, FaCheckCircle } from 'react-icons/fa'
 import toast from 'react-hot-toast'
 

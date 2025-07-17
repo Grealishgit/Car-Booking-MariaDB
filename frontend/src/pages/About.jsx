@@ -3,7 +3,7 @@ import car1 from '../assets/carcard1.png'
 import car2 from '../assets/carcard2.png'
 import car3 from '../assets/carcard3.png'
 import car4 from '../assets/carcard4.png'
-import interior from '../assets/bg.png'
+import interior from '../assets/bg6.png'
 import { FaCar, FaUsers, FaShieldAlt, FaGlobe, FaAward, FaPhoneAlt, FaCheckCircle, FaStar, FaHeadset, FaLeaf } from 'react-icons/fa'
 
 const About = () => {
@@ -29,7 +29,7 @@ const About = () => {
                         </svg>
                     </span>
                 </button>
-                <h1 className="text-gray-900 font-bold text-3xl sm:text-4xl md:text-5xl max-w-xl leading-tight">
+                    <h1 className="text-gray-200 font-bold text-3xl sm:text-4xl md:text-5xl max-w-xl leading-tight">
                     From comfort to luxury, we have it all for
                     <span className="text-indigo-600"> every journey
 
