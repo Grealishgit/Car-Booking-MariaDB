@@ -4,9 +4,9 @@ import logo from '../assets/logoc.png';
 const Footer = () => {
     return (
         <footer className='bg-gray-800 w-full flex flex-col justify-center items-center text-white'>
-            <div className='w-full md:justify-between justify-center items-center flex md:flex-row flex-col p-4 text-white'>
+            <div className='w-full md:justify-between  items-center flex md:flex-row flex-col p-4 text-white'>
 
-                <div className='w-1/2 items-start mt-4'>
+                <div className='md:w-1/2 w-full items-start mt-4'>
                     <div className='flex  items-center gap-2'>
                         <img src={logo} alt="Logo" className='w-16 h-auto' />
                     <p className='text-3xl text-center font-semibold'>Shika<span className='text-blue-500'>Ride</span>
@@ -19,7 +19,7 @@ const Footer = () => {
                     </p>
 
                 </div>
-                <div className='flex flex-col w-1/2 items-start justify-center mt-4'>
+                <div className='flex flex-col md:w-1/2 w-full items-center justify-center mt-4'>
                     <p className='text-3xl'>Contact Us</p>
                     <div className='grid grid-cols-2 gap-4 mt-2'>
                         <a href="">Linkedn</a>
@@ -29,13 +29,15 @@ const Footer = () => {
                     </div>
 
                 </div>
-                <div className='flex flex-col w-1/2 items-start justify-center mt-4'>
+                <div className='flex justify-between w-full'>
+                    <div className='flex flex-col md:w-1/2 w-full items-start  justify-center mt-4'>
                     <p className='text-3xl'>SERVICE</p>
                     <a href="/service">Rent Car</a>
                     <a href="/locations">Deliver</a>
                     <a href="/contact">Trade</a>
                 </div>
-                <div className='flex flex-col w-1/2 items-start justify-center mt-4'>
+
+                    <div className='flex flex-col md:w-1/2 w-full md:items-start items-center justify-center mt-4'>
                     <p className='text-3xl'>Suupport</p>
                     <div className='flex flex-col mt-2'>
                         <a href="/privacy">Privacy Policy</a>
@@ -43,9 +45,11 @@ const Footer = () => {
                         <a href="/help">Help Center</a>
                     </div>
                 </div>
-                <div className='flex flex-col w-1/2 items-start justify-center mt-4' >
+                </div>
+
+                <div className='flex flex-col md:w-1/2 w-full items-center justify-center mt-4' >
                     <p>Stay Up To Date</p>
-                    <form className='flex flex-col mt-2'>
+                    <form className='flex flex-col w-full mt-2'>
                         <input
                             type="email"
                             placeholder='Enter your email'
