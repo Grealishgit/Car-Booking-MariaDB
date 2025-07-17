@@ -33,6 +33,7 @@ const Navbar = () => {
                         onClick={() => {
                             handleClick('Home');
                             handleNavigation('/');
+                            scrollTo(0, 0);
                         }}
                     >
                         Home
@@ -42,6 +43,7 @@ const Navbar = () => {
                         onClick={() => {
                             handleClick('Service');
                             handleNavigation('/service');
+                            scrollTo(0, 0);
                         }}
 
                     >
@@ -52,6 +54,7 @@ const Navbar = () => {
                         onClick={() => {
                             handleClick('Locations');
                             handleNavigation('/locations');
+                            scrollTo(0, 0);
                         }}
                     >
                         Locations
@@ -62,6 +65,7 @@ const Navbar = () => {
                         onClick={() => {
                             handleClick('About');
                             handleNavigation('/about');
+                            scrollTo(0, 0);
                         }}
                     >
                         About Us
@@ -71,6 +75,7 @@ const Navbar = () => {
                         onClick={() => {
                             handleClick('Contact');
                             handleNavigation('/contact');
+                            scrollTo(0, 0);
                         }}
                     >
                         Contact Us
@@ -81,7 +86,10 @@ const Navbar = () => {
                     <GoQuestion className='w-6 h-6 cursor-pointer' />
                     <IoIosHeartEmpty className='w-6 h-6 cursor-pointer' />
                     <FiUser className='w-6 h-6 md:hidden block cursor-pointer' />
-                    <button onClick={() => handleNavigation('/login')}
+                    <button onClick={() => {
+                        handleNavigation('/login');
+                        scrollTo(0, 0);
+                    }}
                         className='px-5 py-2 md:flex hidden cursor-pointer gap-2 items-center
                      bg-[#0E7BF8] text-white rounded hover:bg-blue-600'>
                         <FiUser />
