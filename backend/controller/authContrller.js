@@ -29,6 +29,7 @@ export const signup = async (req, res) => {
         // Check for existing email or phone number
         const existingEmail = await conn.query('SELECT * FROM users WHERE email = ?', [email]);
         const existingPhone = await conn.query('SELECT * FROM users WHERE phoneNumber = ?', [phoneNumber]);
+        const existingUsername = await conn.query('SELECT * FROM users WHERE userName = ?', [userName]);
 
         if (existingEmail.length > 0) {
             conn.release();

@@ -135,32 +135,6 @@ const SignUp = () => {
 
                     {/* Email/Phone Toggle */}
                     <div className="mb-4">
-                        <div className="flex bg-gray-800/50 rounded-lg border border-gray-300 p-1 mb-3">
-                            <button
-                                type="button"
-                                onClick={toggleMode}
-                                className={`flex-1 flex items-center cursor-pointer justify-center gap-2 py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${isEmailMode
-                                    ? 'bg-blue-600 text-white shadow-lg'
-                                    : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
-                                    }`}
-                            >
-                                <FaEnvelope className="w-4 h-4" />
-                                Email
-                            </button>
-                            <button
-                                type="button"
-                                onClick={toggleMode}
-                                className={`flex-1 flex items-center cursor-pointer justify-center gap-2 py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${!isEmailMode
-                                    ? 'bg-blue-600 text-white shadow-lg'
-                                    : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
-                                    }`}
-                            >
-                                <FaPhone className="w-4 h-4" />
-                                Phone
-                            </button>
-                        </div>
-
-                        {isEmailMode ? (
                             <div>
                                 <label className="block text-sm font-medium text-gray-200 mb-2">
                                     Email Address
@@ -175,7 +149,7 @@ const SignUp = () => {
                                     required
                                 />
                             </div>
-                        ) : (
+
                             <div>
                                 <label className="block text-sm font-medium text-gray-200 mb-2">
                                     Phone Number
@@ -190,7 +164,7 @@ const SignUp = () => {
                                         required
                                     />
                                 </div>
-                        )}
+
                     </div>
 
                     {/* Password Field */}

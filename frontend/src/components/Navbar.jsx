@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logoc.png'; // Assuming you have a logo image
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
+import { formatDate } from '../../lib/utils';
 
 const Navbar = () => {
     const [isActive, setIsActive] = useState('Home');
@@ -116,14 +117,16 @@ const Navbar = () => {
                             {/* Profile Icon for Authenticated Users */}
                             <button
                                 onClick={() => setProfileModalOpen(!profileModalOpen)}
-                                className="w-10 h-10 md:flex hidden items-center justify-center bg-[#0E7BF8] text-white rounded-full hover:bg-blue-600 transition-colors duration-200"
+                                className="w-10 h-10 md:flex hidden items-center cursor-pointer justify-center bg-[#0E7BF8]
+                                 text-white rounded-full hover:bg-blue-600 transition-colors duration-200"
                             >
                                 <FiUser className="w-5 h-5" />
                             </button>
 
                             {/* Profile Modal */}
                             {profileModalOpen && (
-                                <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 z-50">
+                                <div className="absolute right-0 mt-2 w-80 bg-black/80 backdrop-blur-3xl rounded-md
+                                 shadow-2xl border border-blue-500 z-50">
                                     <div className="p-6">
                                         {/* User Info Header */}
                                         <div className="flex items-center space-x-3 mb-4">
@@ -131,32 +134,38 @@ const Navbar = () => {
                                                 <FiUser className="w-6 h-6 text-white" />
                                             </div>
                                             <div>
-                                                <h3 className="text-lg font-semibold text-gray-800">{user?.userName}</h3>
-                                                <p className="text-sm text-gray-500">Welcome back!</p>
+                                                <h3 className="text-lg font-semibold text-blue-500">{user?.userName}</h3>
+                                                <p className="text-sm text-gray-100">Welcome back!</p>
                                             </div>
                                         </div>
 
                                         {/* User Details */}
                                         <div className="space-y-3 mb-4">
-                                            <div className="flex items-center space-x-3 text-gray-600">
+                                            <div className="flex items-center space-x-3 text-gray-100">
                                                 <FiMail className="w-4 h-4" />
                                                 <span className="text-sm">{user?.email}</span>
                                             </div>
-                                            <div className="flex items-center space-x-3 text-gray-600">
+                                            <div className="flex items-center space-x-3 text-gray-200">
                                                 <FiPhone className="w-4 h-4" />
                                                 <span className="text-sm">{user?.phoneNumber}</span>
                                             </div>
+                                            <div className='flex flex-col'>
+                                                <h3 className='text-blue-500'>Account Created On: </h3>
+                                                <p className="text-sm font-semibold text-gray-200">{formatDate(user?.createdAt)}</p>
+                                            </div>
+
                                         </div>
 
                                         {/* Action Buttons */}
                                         <div className="space-y-2">
-                                            <button className="w-full flex items-center space-x-3 px-4 py-2 text-left text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200">
+                                            <button className="w-full flex cursor-pointer items-center space-x-3 px-4 py-2 text-left text-white
+                                             hover:bg-blue-500 hover:text-white rounded-lg transition-colors duration-200">
                                                 <FiEdit className="w-4 h-4" />
                                                 <span>Edit Profile</span>
                                             </button>
                                             <button
                                                 onClick={handleLogout}
-                                                className="w-full flex items-center space-x-3 px-4 py-2 text-left text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200"
+                                                className="w-full flex cursor-pointer items-center space-x-3 px-4 py-2 text-left text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200"
                                             >
                                                 <FiLogOut className="w-4 h-4" />
                                                 <span>Logout</span>
