@@ -4,6 +4,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { FiUser } from "react-icons/fi";
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logoc.png'; // Assuming you have a logo image
+import Login from '../auth/Login';
 
 const Navbar = () => {
     const [isActive, setIsActive] = useState('Home');
@@ -15,6 +16,8 @@ const Navbar = () => {
     const handleNavigation = (path) => {
         navigate(path);
     };
+
+    const [modalOpen, setModalOpen] = useState(true);
 
     return (
         <nav>
@@ -86,6 +89,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
+
 
 
         </nav>
