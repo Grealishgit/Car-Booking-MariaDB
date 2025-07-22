@@ -185,7 +185,7 @@ const CardCard = () => {
                                         }
                                     </div>
 
-                                    <img src={car.image} alt={car.name} className="w-full h-40 object-cover rounded-t-lg" />
+                                    <img src={car.image} alt={car.name} className="w-full h-40 object-contain rounded-t-lg" />
                                     <div className="flex  items-center justify-between mt-2">
                                         <div className="flex items-center">
                                             {renderStars(car.rating)}

@@ -155,7 +155,7 @@ const Service = () => {
 
                         <img src={car.image} alt={car.name} className="w-full h-64 object-contain" />
 
-                        <div className="p-4 flex mb-4 justify-between items-center">
+                            <div className="p-4 flex  mb-4 justify-between items-center">
                             <div className="flex flex-col items-start">
                                 <div className="flex flex-col items-start gap-2">
                                     <p className='flex gap-2'>{renderStars(car.rating)}</p>
@@ -171,7 +171,7 @@ const Service = () => {
                                 <p className="text-blue-600 font-semibold mb-2">Ksh {car.price} per day</p>
                                 <button>
                                     <span className="bg-blue-500 cursor-pointer text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">
-                                        Book Now
+                                            Book 
                                     </span>
                                 </button>
                             </div>
