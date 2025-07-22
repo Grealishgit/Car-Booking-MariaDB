@@ -151,6 +151,13 @@ const Home = () => {
                     </>
                 )}
 
+
+                <div className="flex fixed bottom-0 right-0 flex-col items-center justify-center mt-10">
+                    <button className='cursor-pointer mb-5 bottom-2 right-0 mr-4 mt-4 bg-white text-blue-600 font-semibold px-8 py-2
+                     rounded-lg flex items-center gap-2 hover:bg-blue-500 hover:text-white transition duration-300'>
+                        Live Chat
+                    </button>
+                </div>
             </div>
             <CardCard />
         </>
