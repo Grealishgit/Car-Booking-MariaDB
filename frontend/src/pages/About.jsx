@@ -70,19 +70,19 @@ const About = () => {
             </div>
                 <div aria-label="Photos of leaders" className="md:grid grid-cols-3 p-4 hidden  border border-gray-300
                 rounded-md bg-gradient-to-bl from-black/50 to-gray-500 gap-6 mt-16 pb-2">
-                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer  hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car1}
                     width="120" />
                     <img alt="" className="w-50 h-44 rounded-lg cursor-pointer  hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car2}
                     width="120" />
-                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer  hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                     src={car3}
                     width="120" />
                     <img alt="" className="w-50 h-44 rounded-lg cursor-pointer  hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                         src={car4}
                         width="120" />
-                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer border border-indigo-300 hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
+                    <img alt="" className="w-50 h-44 rounded-lg cursor-pointer  hover:scale-105 transition duration-300 object-contain flex-shrink-0 shadow-lg" height="140"
                         src={car4}
                         width="120" />
 

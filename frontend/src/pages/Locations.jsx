@@ -119,7 +119,7 @@ const Locations = () => {
             {/* Locations Grid */}
             <div className='w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {locations.map((location, index) => (
-                    <div key={index} className='bg-white/90 backdrop-blur-sm shadow-xl rounded-xl p-6 hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105'>
+                    <div key={index} className='bg-white/90 backdrop-blur-sm cursor-pointer shadow-xl rounded-xl p-6 hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105'>
 
                         {/* Location Header */}
                         <div className='border-b border-gray-200 pb-4 mb-4'>
