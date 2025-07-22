@@ -109,9 +109,10 @@ const Home = () => {
                     </div>
 
 
-                    <div className="flex items-center justify-center mt-10 mb-1 rounded-lg  cursor-pointer  bg-white md:w-1/2 w-full gap-2">
-                        <FaCar className='w-5 h-5' />
-                        <button className="font-bold  text-blue-600  hover:bg-blue-100 transition duration-300">
+                    <div className="flex  justify-center  md:w-1/2 w-full gap-2">
+                        <button className="font-bold px-4 py-2 items-center rounded-lg mt-10 mb-2 bg-white hover:bg-blue-500  
+                         flex gap-2 text-blue-600 hover:text-white  transition duration-300">
+                            <FaCar className='w-5 h-5' />
                             Search
                         </button>
                     </div>
